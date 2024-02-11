@@ -1,0 +1,134 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.header{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+}
+ul{
+    display: flex;
+    gap: 10px;
+    margin-right: 10px;
+    padding: 10px;
+}
+li{
+list-style-type: none;
+padding: 10px;
+cursor: pointer;
+font-size: larger;
+}
+.link{
+    text-decoration-style: none;
+    color: black;
+}
+.image img{
+width: 40%;
+border-radius: 5px;
+}
+.rest-body{
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    height: 83vh;
+    margin: 0px auto;
+    border-radius: 10px;
+}
+.search-item{
+    height: 10%;
+    border-radius: 10px;
+    display: flex;
+}
+
+hr{
+    width: 95%;
+    margin: 20px auto;
+}
+.resturant-card{
+    height: 95%;
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.search-box{
+   height: 50%;
+   width: 300px;
+   margin: 10px 10px;
+   border: groove;
+   border-radius: 5px;
+   font-size: medium;
+   font-family: sans-serif;
+
+}
+.search-button{
+width: 100px;
+height: 70%;
+margin: 10px 10px;
+border: none;
+border-radius: 10px;
+background-color: rgb(168, 141, 106);
+color: black;
+cursor: pointer;
+}
+.restro-card{
+    width: 180px;
+    border-radius: 20px;
+    margin: 10px 15px;
+    background-color: whitesmoke;
+}
+.resturant-card :hover{
+    cursor: pointer;
+    border-radius: 20px;
+ }
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
+
+.restro-img{
+    height: 190px;
+    width: 100%;
+    border-radius: 10px;
+}
+.restro-img>img{
+    height: 185px;
+    width: 99%;
+    margin: 2px auto;
+    border-radius: 5px;
+}
+.restro-details{
+    width: 100%;
+    border-radius: 5px;
+   
+}
+.restro-name{
+    padding: 5px 5px;
+}
+.cuisian {
+    padding: 5px 5px;
+}
+.cuisian span{
+   margin-right: 5px;
+   color: rgb(148, 3, 34);
+}
+.restro-addr{
+    padding: 5px 5px;
+}
+.btn-name{
+width: 100px;
+height: 50px;
+border: none;
+border-radius: 10px;
+background-color: rgb(168, 141, 106);
+color: black;
+cursor: pointer;
+margin: 0px;
+padding: 0px;
+}
