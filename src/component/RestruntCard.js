@@ -1,5 +1,5 @@
 const RestruntCard = ({d})=>{
-    console.log("RestruntCard");
+    //console.log("RestruntCard");
     return(
     <div className='restro-card'>
         <div className='content'>

@@ -30,3 +30,12 @@ i) useState: This hooks helps in managing the state of the component. One the st
 
          
 ii)
+
+
+
+
+https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.568093&lng=77.4344775&restaurantId=577853&catalog_qa=undefined&submitAction=ENTER
+
+style={{color:restList?.itemCards[0]?.card?.info?.ribbon.textColor}}
+
+https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/7798d7bed74c81bc0e5ffc677a7d2eef

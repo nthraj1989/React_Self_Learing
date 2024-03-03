@@ -1,0 +1,79 @@
+*{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+font-family: sans-serif;
+background-color: rgb(240, 238, 234);
+}
+
+.container{
+    min-height: 100vh;
+    margin: 0px auto;
+    background-color: rgba(255, 249, 249, 0);
+}
+.body{
+    width: 60%;
+    margin: 30px auto;
+    border: 1px solid rgba(0, 0, 0, 0.082);
+    background-color: white;
+}
+
+.header-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 10px;
+}
+.left-header>h2{
+    padding: 4px 0px;
+
+}
+h5,address,h4{
+font-weight: 500;
+padding: 4px 0px;
+    font-size: smaller;
+}
+.right-header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100px;
+    border: 1px solid rgba(0, 0, 0, 0.171);
+    border-radius: 5px;
+}
+span{
+    color: rgb(4, 221, 4);
+    font-weight: bolder;
+    margin: 4px 4px;
+    font-size: larger;
+}
+.star{
+    color: rgb(4, 221, 4);
+    font-weight: 900 px;
+    margin: 4px 4px;
+    font-size: larger;
+    text-align: center;
+}
+
+hr{
+    height: 5px;
+    border-radius: 5px;
+    background-color: rgba(244, 245, 244, 0.404);
+}
+
+.res-list{
+    margin: 0px 7px;
+}
+.list-of-rest{
+    margin-top: 20px;
+}
+.desc{
+    font-size: small;
+    color: rgba(0, 0, 0, 0.568);
+    margin-top: 6px;
+}

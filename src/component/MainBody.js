@@ -3,6 +3,7 @@ import SearchBox from "./SearchBox";
 //import data from "../data";
 import { useEffect, useState } from "react";
 import ShimmerUI from "./ShimmerUI";
+import { Link } from "react-router-dom";
 
 const MainBody =()=>{
     console.log("MainBody");
@@ -10,7 +11,14 @@ const MainBody =()=>{
     //and its child component where the state got chnaged
     const [listOfRestrunant,setListOfRestrurant] = useState([]);
     const [filteredListOfRestrurant,setFilteredListOfRestrurant]=useState([]);
-    const [searchText,setSearchText] = useState("");
+  
+
+    // callback function which will be called when search button is called
+
+    const sendData = (d) => {
+        console.log(d);
+        setFilteredListOfRestrurant(d)
+      }
 
     useEffect(()=>{
         fetchRestroDetails();
@@ -18,11 +26,10 @@ const MainBody =()=>{
     
     const fetchRestroDetails =  async()=>{
         const data = await fetch(`
-        https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.568093&lng=77.4344775&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`);
+        https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Frestaurants%2Flist%2Fv5%3Flat%3D28.568093%26lng%3D77.4344775%26is-seo-homepage-enabled%3Dtrue%26page_type%3DDESKTOP_WEB_LISTING`);
         const response = await data.json();
         setListOfRestrurant(response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredListOfRestrurant(response?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        console.log("This is list of restrurant", filteredListOfRestrurant);
         }
         
 
@@ -31,25 +38,23 @@ const MainBody =()=>{
     <div className='rest-body'>
        
        {/* search text */}
-        <div className='search-item'>
-         <input type='text' placeholder='name of resturant' className='search-box' value={searchText} 
-         onChange={(e)=>{setSearchText(e.target.value);} 
-            
-            }/>
-         <button className='search-button' onClick={()=>{
-           const restroName =listOfRestrunant.filter((r)=>{
-            return r.info.name.toLowerCase().includes(searchText.toLowerCase());
-           })
-           setFilteredListOfRestrurant(restroName);
-           setSearchText("");
-         }}>Submit</button>
-        
+        <div className='search-item'>  
+            {/* Search logic is abstracted from here to 
+            search component, we are sending data from child to parent */}
+
+        <SearchBox  d={[sendData,filteredListOfRestrurant]}/>  
+         
          {/* filter button */}
          <button className='search-button' 
          onClick={()=>{
            let filteredData = listOfRestrunant.filter((d)=>d.info.avgRating>4)
            setFilteredListOfRestrurant(filteredData);
             }}>Top Rated Resturant</button>
+
+         {filteredListOfRestrurant.length!==listOfRestrunant.length?<button className='search-button' onClick={()=>{
+            setFilteredListOfRestrurant(listOfRestrunant);
+         }}>
+            ClearFilter</button>:" "}
        
         </div>
 
@@ -58,7 +63,8 @@ const MainBody =()=>{
         <div className='resturant-card'>
         {
             filteredListOfRestrurant.map(data=>{
-                return <RestruntCard key={data?.info.id} d={data}/>
+               
+                return <Link className="card-link" key={data?.info.id} to={"/restarunts/"+data?.info.id}><RestruntCard  d={data}/></Link>
             })
         }
         </div>
